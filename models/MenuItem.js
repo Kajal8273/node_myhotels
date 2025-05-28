@@ -1,5 +1,5 @@
 const mongoose = require('mongoose'); // ✅ fixed typo
-const { db } = require('./person');
+const { db } = require('./Person');
 
 const menuItemSchema = new mongoose.Schema({
     name: {
