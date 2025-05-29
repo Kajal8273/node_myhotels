@@ -3,6 +3,8 @@
 Welcome to the **Hotel & Restaurant Management Backend**, a RESTful API built to handle all the core operations of a hotel and restaurant system, including room reservations, food orders, billing, and more.
 
 > 💻 Built with ❤️ by **Kajal**
+>
+> 🚀 **[Click here to view the live backend](https://hotelss-ucyp.onrender.com/)**
 
 ---
 
