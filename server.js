@@ -88,7 +88,8 @@ const PORT = process.env.PORT || 3000;
 
 //Middleware funstion
 const logRequest =(req,res,next)=>{
-    console.log(`${new Date().toLocaleString()} Request Made to :${req.orignalUrl}`);
+    console.log(`${new Date().toLocaleString()} Request Made to : ${req.originalUrl}`);
+
     next(); // move to next phase 
 }
 
@@ -123,8 +124,8 @@ const personRoutes = require('./routes/personRoutes');
 const menuItemsRoutes = require('./routes/menuItemsRoutes');
 
 //Use the routers
-app.use('/person',personRoutes);
-app.use('/menu',localAuthMiddleware ,menuItemsRoutes);
+app.use('/person' ,personRoutes);
+app.use('/menu',menuItemsRoutes);
 
 app.listen(3000,()=>{
     console.log('active on port 3000');
