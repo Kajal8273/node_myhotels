@@ -4,6 +4,7 @@ const Person = require('./models/Person');
 
 
 passport.use(new LocalStrategy(
+  
   async (username, password, done) => {
     try {
       //console.log('Received credentials:', username, password);

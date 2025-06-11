@@ -124,7 +124,7 @@ const personRoutes = require('./routes/personRoutes');
 const menuItemsRoutes = require('./routes/menuItemsRoutes');
 
 //Use the routers
-app.use('/person' ,personRoutes);
+app.use('/person',localAuthMiddleware,personRoutes);
 app.use('/menu',menuItemsRoutes);
 
 app.listen(3000,()=>{

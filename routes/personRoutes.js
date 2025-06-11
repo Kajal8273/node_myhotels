@@ -24,28 +24,30 @@ router.post('/',async(req,res)=>{
      }
     catch(err){
         console.log(err);
-        res.status(200).json({error:'internal server error'});
+        res.status(500).json({error:'internal server error'});
 
     }
 })
 
 //GET Method to get person data
 
-router.get('/',async(req,res)=>{
-    try{
-
-         const data =  await Person.find();
-         console.log('data saved');
-         res.status(200).json(data);
-         
-
-    }catch(err){
-        console.log(err);
-        res.status(200).json({error:'internal server error'});
-
+router.get('/', async (req, res) => {
+    try {
+      const { username, password } = req.query; // ya req.body if POST
   
+      const data = await Person.findOne({ username, password }); // 👈 match based on input
+  
+      if (!data) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+  
+      res.status(200).json(data);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json({ error: 'internal server error' });
     }
-})
+  });
+  
 
 
 //Parametrised API calls
