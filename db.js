@@ -8,7 +8,7 @@ const mongoURL = 'mongodb://127.0.0.1:27017/hotels'  //  const mongoURL = proces
  
 // conecetd with global/hosting online db connection
 //const mongoURL=process.env.MONGODB_URL;
-
+//const mongoURL =process.env.MONGODB_URL_LOCAL
 
 //setup mongodb connection
 mongoose.connect(mongoURL,{
